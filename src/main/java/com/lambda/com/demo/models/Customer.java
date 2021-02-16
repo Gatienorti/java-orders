@@ -27,6 +27,7 @@ public class Customer {
 
     @ManyToOne
     @JoinColumn(name = "agentCode", nullable = false)
+    @JsonIgnoreProperties(value="customers", allowSetters = true)
     private Agent agent;
 
     public Customer() {
