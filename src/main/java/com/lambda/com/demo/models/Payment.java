@@ -14,7 +14,7 @@ public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
-    private long paymentId;
+    private long paymentid;
 
     @Column(nullable = false,unique = true)
     private String type;
@@ -30,12 +30,12 @@ public class Payment {
         this.type = type;
     }
 
-    public long getPaymentId() {
-        return paymentId;
+    public long getPaymentid() {
+        return paymentid;
     }
 
-    public void setPaymentId(long paymentId) {
-        this.paymentId = paymentId;
+    public void setPaymentid(long paymentId) {
+        this.paymentid = paymentId;
     }
 
     public String getType() {

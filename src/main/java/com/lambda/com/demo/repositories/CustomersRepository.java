@@ -9,12 +9,12 @@ import java.util.List;
 
 public interface CustomersRepository extends CrudRepository<Customer, Long> {
 
-    List<Customer> findByCustNameContainingIgnoringCase(String name);
+    List<Customer> findByCustnameContainingIgnoringCase(String name);
 
-    @Query(value="SELECT c.cust_name as name, count(ord_num) as countorder " +
+    @Query(value="SELECT c.custname as name, count(ordnum) as countorder " +
                 "FROM customers c LEFT JOIN orders o " +
-                "ON c.cust_code = o.cust_code " +
-                "GROUP BY c.cust_name " +
+                "ON c.custcode = o.custcode " +
+                "GROUP BY c.custname " +
                 "ORDER BY countorder DESC ", nativeQuery = true)
     List<OrderCounts>findCustomersOrderCount();
 }

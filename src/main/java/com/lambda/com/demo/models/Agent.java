@@ -13,11 +13,11 @@ public class Agent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long agentCode;
+    private long agentcode;
     @Column(nullable = false, unique = true)
 
-    private String agentName;
-    private String WorkingArea;
+    private String agentname;
+    private String workingarea;
     private double commission;
     private String phone;
     private String country;
@@ -29,36 +29,36 @@ public class Agent {
     public Agent() {
     }
 
-    public Agent(String agentName, String workingArea, double commission, String phone, String country) {
-        this.agentName = agentName;
-        WorkingArea = workingArea;
+    public Agent(String agentname, String workingarea, double commission, String phone, String country) {
+        this.agentname = agentname;
+        this.workingarea = workingarea;
         this.commission = commission;
         this.phone = phone;
         this.country = country;
     }
 
-    public long getAgentCode() {
-        return agentCode;
+    public long getAgentcode() {
+        return agentcode;
     }
 
-    public void setAgentCode(long agentCode) {
-        this.agentCode = agentCode;
+    public void setAgentcode(long agentCode) {
+        this.agentcode = agentCode;
     }
 
-    public String getAgentName() {
-        return agentName;
+    public String getAgentname() {
+        return agentname;
     }
 
-    public void setAgentName(String agentName) {
-        this.agentName = agentName;
+    public void setAgentname(String agentName) {
+        this.agentname = agentName;
     }
 
-    public String getWorkingArea() {
-        return WorkingArea;
+    public String getWorkingarea() {
+        return workingarea;
     }
 
-    public void setWorkingArea(String workingArea) {
-        WorkingArea = workingArea;
+    public void setWorkingarea(String workingarea) {
+        this.workingarea = workingarea;
     }
 
     public double getCommission() {

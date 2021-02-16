@@ -37,7 +37,7 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public List<Customer> findCustomerByName(String name) {
-        return customersRepository.findByCustNameContainingIgnoringCase(name);
+        return customersRepository.findByCustnameContainingIgnoringCase(name);
     }
 
     @Override
