@@ -4,6 +4,9 @@ package com.lambda.com.demo.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name = "customers")
@@ -29,6 +32,14 @@ public class Customer {
     @JoinColumn(name = "agentcode", nullable = false)
     @JsonIgnoreProperties(value="customers", allowSetters = true)
     private Agent agent;
+
+    @OneToMany(mappedBy = "customer",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
+    @JsonIgnoreProperties(value = "customer",
+            allowSetters = true)
+    private List<Order> orders = new ArrayList<>();
+
 
     public Customer() {
     }
@@ -141,5 +152,13 @@ public class Customer {
 
     public void setAgent(Agent agent) {
         this.agent = agent;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 }
